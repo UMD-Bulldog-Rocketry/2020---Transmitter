@@ -1,5 +1,5 @@
-Interrupts/SysTick.d Interrupts/SysTick.o: ../Interrupts/SysTick.cpp \
- ../Interrupts/SysTick.h \
+Kernel/Interrupts/SysTick.d Kernel/Interrupts/SysTick.o: \
+ ../Kernel/Interrupts/SysTick.cpp ../Kernel/Interrupts/SysTick.h \
  C:\Program\ Files\ (x86)\Atmel\Studio\7.0\Packs\atmel\SAMD21_DFP\1.3.304\samd21a\include/sam.h \
  C:\Program\ Files\ (x86)\Atmel\Studio\7.0\Packs\atmel\SAMD21_DFP\1.3.304\samd21a\include/samd21g18a.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\lib\gcc\arm-none-eabi\6.3.1\include\stdint.h \
@@ -71,7 +71,7 @@ Interrupts/SysTick.d Interrupts/SysTick.o: ../Interrupts/SysTick.cpp \
  C:\Program\ Files\ (x86)\Atmel\Studio\7.0\Packs\atmel\SAMD21_DFP\1.3.304\samd21a\include/instance/wdt.h \
  C:\Program\ Files\ (x86)\Atmel\Studio\7.0\Packs\atmel\SAMD21_DFP\1.3.304\samd21a\include/pio/samd21g18a.h
 
-../Interrupts/SysTick.h:
+../Kernel/Interrupts/SysTick.h:
 
 C:\Program\ Files\ (x86)\Atmel\Studio\7.0\Packs\atmel\SAMD21_DFP\1.3.304\samd21a\include/sam.h:
 

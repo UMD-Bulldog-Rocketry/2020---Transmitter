@@ -185,38 +185,64 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Interrupts\HardFault.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Interrupts\HardFault.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Interrupts\SysTick.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Interrupts\SysTick.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="IO\uartManager.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="IO\uartManager.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="Device_Startup\startup_samd21.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Device_Startup\system_samd21.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Kernel\Interrupts\HardFault.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Kernel\Interrupts\HardFault.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Kernel\Interrupts\SysTick.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Kernel\Interrupts\SysTick.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Kernel\IO\i2cManager.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Kernel\IO\i2cManager.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Kernel\IO\spiManager.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Kernel\IO\spiManager.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Kernel\IO\uartManager.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Kernel\IO\uartManager.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Kernel\Kernel.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Kernel\Kernel.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="main.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="OS\OS.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="OS\OS.h">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Device_Startup\" />
-    <Folder Include="Interrupts" />
-    <Folder Include="IO" />
+    <Folder Include="Kernel" />
+    <Folder Include="Kernel\Interrupts\" />
+    <Folder Include="Kernel\IO\" />
+    <Folder Include="OS\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Device_Startup\samd21g18a_flash.ld">

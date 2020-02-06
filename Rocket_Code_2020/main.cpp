@@ -11,9 +11,8 @@
 #include "sam.h"
 #include "samd21g18a.h"
 //Local modules
-#include "IO/uartManager.h"
-#include "Interrupts/HardFault.h"
-#include "Interrupts/SysTick.h"
+#include "Kernel/Interrupts/HardFault.h"
+#include "Kernel/Interrupts/SysTick.h"
 
 
 
@@ -25,8 +24,8 @@ int main(void)
     /* Initialize the SAM system */
     SystemInit();
 	registerHardFault();
-	ConfigureSERCOM2();
-	registerSercom2();
+	//ConfigureSERCOM2();
+	//registerSercom2();
 	registerSysTick();	
 	
 	
