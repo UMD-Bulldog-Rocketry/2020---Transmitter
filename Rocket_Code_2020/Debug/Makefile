@@ -37,6 +37,7 @@ SUBDIRS :=  \
 ../Kernel \
 ../Kernel/Interrupts/ \
 ../Kernel/IO/ \
+../Kernel/Timers \
 ../OS/
 
 

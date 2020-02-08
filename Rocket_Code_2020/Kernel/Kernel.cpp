@@ -4,18 +4,17 @@
  * Created: 2/5/2020 10:48:21 PM
  *  Author: Brice
  */
-#include "sam.h"
-#include "IO/uartManager.h"
+#include "Kernel.h"
 
 
-uint32_t UsartTxEmptyAddr=0, 
-	UsartRxCompleteAddr=0, 
-	SpiTxEmptyAddr=0, 
-	SpiRxCompleteAddr=0, 
-	I2cTxEmptyAddr=0, 
-	I2cRxCompleteAddr=0, 
-	PanicAddr=0, 
-	BodAddr=0;
+/*void *(UsartTxEmptyAddr)(), 
+	*(UsartRxCompleteAddr)(), 
+	*(SpiTxEmptyAddr)(), 
+	*(SpiRxCompleteAddr)(), 
+	*(I2cTxEmptyAddr)(), 
+	*(I2cRxCompleteAddr)(), 
+	*(PanicAddr)(), 
+	*(BodAddr)();*/
 
 void initUSART(){
 	ConfigureSERCOM2();
@@ -61,37 +60,44 @@ void registerCriticalEvents(){
 
 void registerTimerEvents(){
 	//TODO
+	return;
 }
 
 void registerBodEvents(){
 	//TODO
+	registerSpiTxEmptyEvent(*(registerTimerEvents()));
 }
 
 //Interrupt
-void registerUsartTxEmptyEvent(uint32_t address){
-	UsartTxEmptyAddr = address;
+void registerUsartTxEmptyEvent(void (*address)()){
+	UsartTxEmptyAddr = *address;
 }
-void registerUsartRxCompleteEvent(uint32_t address){
+void registerUsartRxCompleteEvent(void (*address)()){
 	UsartRxCompleteAddr = address;
+	address();
 }
 
-void registerSpiTxEmptyEvent(uint32_t address){
+void registerSpiTxEmptyEvent(void (*address)()){
 	SpiTxEmptyAddr = address;
 }
-void registerSpiRxCompleteEvent(uint32_t address){
-	SpiRxCompleteAddr = address;
+void registerSpiRxCompleteEvent(void (*address)()){
+	SpiRxCompleteAddr = *address;
 }
 
-void registerI2cTxEmptyEvent(uint32_t address){
-	I2cTxEmptyAddr = address;
+void registerI2cTxEmptyEvent(void (address)()){
+	I2cTxEmptyAddr = *address;
 }
-void registerI2cRxCompleteEvent(uint32_t address){
-	I2cRxCompleteAddr = address;
+void registerI2cRxCompleteEvent(void (*address)()){
+	I2cRxCompleteAddr = *address;
 }
 
-void registerPanicEvent(uint32_t address){
+void registerPanicEvent(void (*address)()){
 	PanicAddr = address;	
 }
-void registerBodEvent(uint32_t address){
+void registerBodEvent(void (*address)()){
 	BodAddr = address;	
+}
+
+void setTimerInterval(uint32_t clockCycles){
+	//TODO
 }

@@ -242,6 +242,7 @@
     <Folder Include="Kernel" />
     <Folder Include="Kernel\Interrupts\" />
     <Folder Include="Kernel\IO\" />
+    <Folder Include="Kernel\Timers" />
     <Folder Include="OS\" />
   </ItemGroup>
   <ItemGroup>

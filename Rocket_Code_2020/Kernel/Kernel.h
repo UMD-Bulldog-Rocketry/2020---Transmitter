@@ -8,15 +8,17 @@
 
 #ifndef KERNEL_H_
 #define KERNEL_H_
+#include "sam.h"
+#include "IO/uartManager.h"
 
-private:
-uint32_t UsartTxEmptyAddr, UsartRxCompleteAddr;
-uint32_t SpiTxEmptyAddr, SpiRxCompleteAddr;
-uint32_t I2cTxEmptyAddr, I2cRxCompleteAddr;
-uint32_t PanicAddr;
-uint32_t BodAddr;
+//private:
+void (*UsartTxEmptyAddr)(), (*UsartRxCompleteAddr)();
+void (*SpiTxEmptyAddr)(), (*SpiRxCompleteAddr)();
+void (*I2cTxEmptyAddr)(), (*I2cRxCompleteAddr)();
+void (*PanicAddr)();
+void (*BodAddr)();
 
-public:
+//public:
 
 void initUSART();
 void initSPI();
@@ -33,23 +35,21 @@ void registerTimerEvents();
 void registerBODEvents();
 
 //USART Interrupts
-void registerUsartTxEmptyEvent(uint32_t address);
-void registerUsartRxCompleteEvent(uint32_t address);
+void registerUsartTxEmptyEvent(void *(address)());
+void registerUsartRxCompleteEvent(void *(address)());
 
 //SPI Interrupts
-void registerSpiTxEmptyEvent(uint32_t address);
-void registerSpiRxCompleteEvent(uint32_t address);
+void registerSpiTxEmptyEvent(void *(address)());
+void registerSpiRxCompleteEvent(void *(address)());
 
 //I2C Interrupts
-void registerI2cTxEmptyEvent(uint32_t address);
-void registerI2cRxCompleteEvent(uint32_t address);
-
-void setTimerInterval(uint32_t clockCycles);
+void registerI2cTxEmptyEvent(void *(address)());
+void registerI2cRxCompleteEvent(void *(address)());
 
 //Things that you should hope are never called
-void registerPanicEvent(uint32_t address);
-void registerBodEvent(uint32_t address);
+void registerPanicEvent(void *(address)());
+void registerBodEvent(void *(address)());
 
-
+void setTimerInterval(uint32_t clockCycles);
 
 #endif /* KERNEL_H_ */
