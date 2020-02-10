@@ -5,7 +5,15 @@
  *  Author: Brice
  */ 
 
+#include "Kernel.h"
 #define PROFILING_ENABLED 0
+
+void processes[10] = {};
+
+void registerProcess(void *(loopAddress)()){
+}
+
+
 
 void OSInit(){
 	

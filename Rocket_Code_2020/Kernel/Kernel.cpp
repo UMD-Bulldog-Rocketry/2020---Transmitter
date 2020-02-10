@@ -7,7 +7,7 @@
 #include "Kernel.h"
 
 
-/*void *(UsartTxEmptyAddr)(), 
+/*void *(UsartTxEmptyAddr)(), // not used at the moment.
 	*(UsartRxCompleteAddr)(), 
 	*(SpiTxEmptyAddr)(), 
 	*(SpiRxCompleteAddr)(), 
@@ -65,7 +65,7 @@ void registerTimerEvents(){
 
 void registerBodEvents(){
 	//TODO
-	registerSpiTxEmptyEvent(*(registerTimerEvents()));
+	registerSpiTxEmptyEvent(*(registerTimerEvents())); // example, do not use in implementation
 }
 
 //Interrupt

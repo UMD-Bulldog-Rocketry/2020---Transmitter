@@ -227,6 +227,12 @@
     <Compile Include="Kernel\Kernel.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Kernel\Timers\SysTimer.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Kernel\Timers\SysTimer.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="main.cpp">
       <SubType>compile</SubType>
     </Compile>
