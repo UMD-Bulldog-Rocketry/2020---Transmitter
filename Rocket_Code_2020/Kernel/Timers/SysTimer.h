@@ -9,7 +9,7 @@
 
 #ifndef SYSTIMER_H_
 #define SYSTIMER_H_
-
+#include "sam.h"
 
 
 void initSysTimer();

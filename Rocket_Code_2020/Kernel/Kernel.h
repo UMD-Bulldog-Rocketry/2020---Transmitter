@@ -47,9 +47,12 @@ void registerI2cTxEmptyEvent(void *(address)());
 void registerI2cRxCompleteEvent(void *(address)());
 
 //Things that you should hope are never called
+//CHANGE: change to something that is handled by the kernel
 void registerPanicEvent(void *(address)());
 void registerBodEvent(void *(address)());
 
+//Timer events
 void setTimerInterval(uint32_t clockCycles);
+uint64_t getCurrentClockCycle(); //IMPLEMENT: use a 32-bit timer and an interrupt to keep track of clock cycles.
 
 #endif /* KERNEL_H_ */

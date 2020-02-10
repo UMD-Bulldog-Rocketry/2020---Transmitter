@@ -18,6 +18,8 @@ Kernel\IO\uartManager.cpp
 
 Kernel\Kernel.cpp
 
+Kernel\Timers\SysTimer.cpp
+
 main.cpp
 
 OS\OS.cpp

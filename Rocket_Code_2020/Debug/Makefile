@@ -51,6 +51,7 @@ C_SRCS +=  \
 ../Kernel/IO/spiManager.cpp \
 ../Kernel/IO/uartManager.cpp \
 ../Kernel/Kernel.cpp \
+../Kernel/Timers/SysTimer.cpp \
 ../main.cpp \
 ../OS/OS.cpp
 
@@ -70,6 +71,7 @@ Kernel/IO/i2cManager.o \
 Kernel/IO/spiManager.o \
 Kernel/IO/uartManager.o \
 Kernel/Kernel.o \
+Kernel/Timers/SysTimer.o \
 main.o \
 OS/OS.o
 
@@ -82,6 +84,7 @@ Kernel/IO/i2cManager.o \
 Kernel/IO/spiManager.o \
 Kernel/IO/uartManager.o \
 Kernel/Kernel.o \
+Kernel/Timers/SysTimer.o \
 main.o \
 OS/OS.o
 
@@ -94,6 +97,7 @@ Kernel/IO/i2cManager.d \
 Kernel/IO/spiManager.d \
 Kernel/IO/uartManager.d \
 Kernel/Kernel.d \
+Kernel/Timers/SysTimer.d \
 main.d \
 OS/OS.d
 
@@ -106,6 +110,7 @@ Kernel/IO/i2cManager.d \
 Kernel/IO/spiManager.d \
 Kernel/IO/uartManager.d \
 Kernel/Kernel.d \
+Kernel/Timers/SysTimer.d \
 main.d \
 OS/OS.d
 
@@ -175,6 +180,13 @@ Kernel/IO/uartManager.o: ../Kernel/IO/uartManager.cpp
 	
 
 Kernel/Kernel.o: ../Kernel/Kernel.cpp
+	@echo Building file: $<
+	@echo Invoking: ARM/GNU C Compiler : 6.3.1
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\arm\arm-gnu-toolchain\bin\arm-none-eabi-g++.exe$(QUOTE) -mthumb -D__SAMD21G18A__ -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\arm\cmsis\5.0.1\CMSIS\Include" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\SAMD21_DFP\1.3.304\samd21a\include"  -O1 -ffunction-sections -fno-rtti -fno-exceptions -mlong-calls -g3 -Wall -mcpu=cortex-m0plus -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+Kernel/Timers/SysTimer.o: ../Kernel/Timers/SysTimer.cpp
 	@echo Building file: $<
 	@echo Invoking: ARM/GNU C Compiler : 6.3.1
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\arm\arm-gnu-toolchain\bin\arm-none-eabi-g++.exe$(QUOTE) -mthumb -D__SAMD21G18A__ -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\arm\cmsis\5.0.1\CMSIS\Include" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\SAMD21_DFP\1.3.304\samd21a\include"  -O1 -ffunction-sections -fno-rtti -fno-exceptions -mlong-calls -g3 -Wall -mcpu=cortex-m0plus -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

@@ -31,7 +31,15 @@ Processes are looped code snippets that are managed by the OS. They are easy to 
 ### 3) Things That Need Doing
 
 ------------
-This is a list of things that need doing and how far along they are.
+This is a list of things that need doing and how far along they are.   
 [![ToDo List](https://i.imgur.com/hns2lSP.png "ToDo List")](https://i.imgur.com/hns2lSP.png "ToDo List")
+
+### 4)Tags in code  
+
+------------  
+Certain tags are placed in the code to indigate certain things that need development.   
+TODO: a generic catch-all tag for unimplemented methods.  
+IMPLEMENT: A method in a header file which has not yet bee implemented.  
+BUG: A tag indicating that a method or class has a bug. follow up with a description.
 
 
