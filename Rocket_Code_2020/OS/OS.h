@@ -13,10 +13,16 @@
 #define CPU_FREQUENCY 48000000
 #endif
 
+#include "sam.h"
 #include "../Kernel/Kernel.h"
 
 void OSInit();
 void OSTick();
+
+void printSerialChar(char c);
+char readSerialChar();
+char peekSerialChar();
+
 uint64_t getMicros();
 uint32_t getMillis();
 
